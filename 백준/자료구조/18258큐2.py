@@ -1,6 +1,10 @@
+#sys를 이용해 각 줄마다 입력값을 받아 처리
+#deque를 이용해 풀이
+
 import sys
+from collections import deque
 n = int(input())
-queue=[]
+queue=deque([])
 for i in range(n):
     command = sys.stdin.readline().split()
     if command[0]=="push":
@@ -9,7 +13,7 @@ for i in range(n):
         if not queue:
             print(-1)
         else:
-            queue.pop(0)
+            print(queue.popleft())
     elif command[0]=="size":
         print(len(queue))
     elif command[0]=="empty":
