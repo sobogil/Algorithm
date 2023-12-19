@@ -12,4 +12,4 @@ for i in range(N):
     result.append(str(stack[pi]))
     stack.pop(pi)
 
-print("<",", ".join(result),">", )
+print("<",", ".join(result),">", sep="")
