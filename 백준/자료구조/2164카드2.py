@@ -1,13 +1,11 @@
-N= int(input())
-ag=[]
-for i in range(N):
-    ag.append(i+1)
+from collections import deque
 
-for i in range(N-1):
-    ag.pop(0)
-    count=ag[0]
-    for j in range(len(ag)-1):
-        ag[j]=ag[j+1]
-    ag[-1]=count
+N = int(input())
+deque = deque([i for i in range(1, N+1)])
 
-print(ag)
+while(len(deque) >1):
+    deque.popleft()
+    move_num = deque.popleft()
+    deque.append(move_num)
+    
+print(deque[0])
