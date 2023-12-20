@@ -1,10 +1,9 @@
 from collections import deque
+import sys
 T=int(input())
 for i in range(T):
     N, K=map(int, input().split())
-    num=deque()
-    for i in range(N):
-        num.append(i)
+    num=deque(list(map(int, sys.stdin.readline().split())))
     count=0
     while num:
         best=max(num)
