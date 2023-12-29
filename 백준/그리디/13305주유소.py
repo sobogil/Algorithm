@@ -3,7 +3,7 @@ dist=[]
 price=[]
 dist=list(map(int, input().split()))
 price=list(map(int, input().split()))
-print(dist)
+
 result=0
 min=0
 for i in range(N-1):
