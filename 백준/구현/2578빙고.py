@@ -89,8 +89,7 @@ def crossBingo(tempBingo):
 num=0
 while(count<3):
     num+=1
-    checkOne(bingo,list2[num-1])
-    print(num) 
+    checkOne(bingo,list2[num-1]) 
     for i in range(5):
         rowBingo(bingo, i)
     for i in range(5):
