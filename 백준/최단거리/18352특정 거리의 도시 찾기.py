@@ -27,7 +27,6 @@ def dijkstra(start):
                 heapq.heappush(q, (cost, i[0]))
 
 dijkstra(X)
-print(distances)
 result = []
 for i in range(1, N+1):
     if distances[i] == K: result.append(i)
