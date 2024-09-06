@@ -1,0 +1,34 @@
+import heapq
+n, k = map(int, input().split())
+INF = int(1e9)
+
+graph=[[]for i in range(2*k)]
+
+time=[INF]*(2*k)
+
+for i in range(0,2*k):
+    graph[i].append((i+1, 1))
+    if i!=0:
+        graph[i].append((i-1, 1))
+    if i<k:
+        graph[i].append((2*i, 0))
+    if i>=k:
+        graph[i].append((i/2, 0))
+        
+
+def dijkstra(start):
+    Q=[(0,start)]
+    time[start]=0
+    while Q:
+        dist, node = heapq.heappop(Q)
+        if dist > time[node]:
+            continue
+        for i in graph[node]:
+            cost = dist + i[1]
+            if cost < time[i[0]]:
+                time[i[0]]= cost
+                heapq.heappush(Q,(cost, i[0]))
+
+dijkstra(n)
+
+print(min(graph))
